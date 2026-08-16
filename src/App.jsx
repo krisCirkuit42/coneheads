@@ -179,7 +179,8 @@ function App() {
               your Conehead, you can email me the image, its location and
               anything you would like to share about what happened. Your
               photograph may then become part of the character’s continuing
-              story on this website.
+              story on this website.  You can also place your Conehead somwhere
+              with the QR code for someone else to find.  
             </p>
 
             <p>
