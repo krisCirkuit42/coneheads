@@ -1,0 +1,223 @@
+/* =========================================================
+   SEARCH AND RANDOM CONEHEAD CONTROLS
+   Adds space above the controls and makes them easy to use.
+   ========================================================= */
+
+header {
+  padding-top: 24px;
+}
+
+header input,
+header button {
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+header input {
+  width: min(60%, 280px);
+  color: #fff;
+}
+
+header input::placeholder {
+  color: #c7c7c7;
+  opacity: 1;
+}
+
+header button {
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   SHARED IMAGES
+   Keeps all Conehead photographs responsive and centred.
+   ========================================================= */
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   CHARACTER BUTTONS
+   Centres buttons that are direct children of an article.
+   ========================================================= */
+
+article > button {
+  display: block;
+  margin: 1rem auto;
+}
+
+
+/* =========================================================
+   BACK TO ALL CONEHEADS BUTTON
+   Adds space above the button and makes it easier to tap.
+   ========================================================= */
+
+.back-button {
+  display: block;
+  margin: 24px auto 20px;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   CHARACTER BACKSTORIES
+   Displays each backstory inside a dark, rounded panel.
+   ========================================================= */
+
+.backstory {
+  width: min(85%, 500px);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: #222;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.backstory h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.backstory p {
+  margin: 0 0 1.2rem;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.backstory p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LANDING PAGE INTRODUCTION
+   Keeps the main explanation narrow and readable on mobile.
+   ========================================================= */
+
+.landing-introduction {
+  width: min(85%, 500px);
+  margin: 0 auto;
+  padding: 32px 0 48px;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: left;
+}
+
+
+/* The main Coneheads heading is orange and centred. */
+.landing-introduction h1 {
+  margin: 0 0 24px;
+  color: #f47d06;
+  font-size: clamp(2rem, 10vw, 3rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.landing-introduction p {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* Makes the opening sentence slightly more prominent. */
+.landing-introduction p:first-of-type {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Emphasises the final statement about the work. */
+.landing-introduction p:last-child {
+  margin-top: 28px;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ABOUT THE ARTIST
+   Matches the width and readability of the introduction.
+   ========================================================= */
+
+.artist-introduction {
+  width: min(85%, 500px);
+  margin: 0 auto;
+  padding: 0 0 48px;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: left;
+}
+
+.artist-introduction h2 {
+  margin: 0 0 24px;
+  color: #f47d06;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.artist-introduction p {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+
+/* =========================================================
+   CONTACT LINK
+   Centres the link and preserves its purple-blue colour.
+   ========================================================= */
+
+.artist-introduction a {
+  display: block;
+  width: fit-content;
+  margin: 24px auto 40px;
+  color: #646cff;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.artist-introduction a:hover {
+  color: #535bf2;
+}
+.gallery-heading {
+  color: #f47d06;
+  text-align: center;
+}
+
+/* =========================================================
+   LARGER SCREENS
+   Adds more breathing room and slightly enlarges body text.
+   ========================================================= */
+
+@media (min-width: 700px) {
+  .landing-introduction {
+    padding: 48px 0 64px;
+  }
+
+  .artist-introduction {
+    padding-bottom: 64px;
+  }
+
+  .landing-introduction p,
+  .artist-introduction p {
+    font-size: 1.05rem;
+  }
+}
