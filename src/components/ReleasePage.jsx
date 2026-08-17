@@ -241,7 +241,6 @@ function ReleasePage() {
             id="release-photo"
             type="file"
             accept="image/*"
-            capture="environment"
             onChange={(event) =>
               setPhoto(event.target.files[0] || null)
             }
