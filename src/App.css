@@ -267,12 +267,15 @@ article > button {
 }
 
 .form-message {
-  margin: 12px 0 0;
-  padding: 12px;
+  margin: 16px 0 0;
+  padding: 14px;
+  border: 2px solid #f47d06;
   border-radius: 8px;
   background-color: #333;
   color: #fff;
+  font-weight: 600;
   line-height: 1.5;
+  text-align: center;
 }
 
 .sign-out-button {
@@ -331,6 +334,90 @@ article > button {
 }
 
 
+/* Finder photo submission */
+
+.finder-submission {
+  width: min(85%, 500px);
+  margin: 0 auto 4rem;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #222;
+  color: #fff;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.finder-submission h2 {
+  margin: 0 0 16px;
+  color: #f47d06;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.finder-submission > p {
+  margin: 0 0 24px;
+  color: #fff;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.finder-submission form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finder-submission label {
+  margin-top: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.finder-submission input,
+.finder-submission textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #777;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #111;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.finder-submission textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.finder-submission input::placeholder,
+.finder-submission textarea::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+.finder-submission input[type='file'] {
+  padding: 10px;
+}
+
+.finder-submission button {
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 12px 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.finder-submission button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+
 /* Larger screens */
 
 @media (min-width: 700px) {
@@ -352,6 +439,10 @@ article > button {
   }
 
   .release-panel {
+    padding: 32px;
+  }
+
+  .finder-submission {
     padding: 32px;
   }
 }

@@ -7,9 +7,11 @@ import { useState } from 'react'
 // Each character’s information lives in its own file.
 import coneheads from './data/coneheads'
 
-// Import the live release components.
+// Import the live release and sighting components.
 import ReleaseGallery from './components/ReleaseGallery'
 import ReleasePage from './components/ReleasePage'
+import SightingsGallery from './components/SightingsGallery'
+import FinderSubmission from './components/FinderSubmission'
 
 // Import the website styling.
 import './App.css'
@@ -53,7 +55,6 @@ function App() {
 
   // Select one Conehead at random and open their individual page.
   const visitRandomConehead = () => {
-    // Stop safely if the Conehead list is ever empty.
     if (coneheads.length === 0) {
       return
     }
@@ -63,7 +64,6 @@ function App() {
 
     const randomConehead = coneheads[randomIndex]
 
-    // Clear any existing search before opening the random character.
     setSearchTerm('')
     setSelectedConehead(randomConehead)
   }
@@ -72,7 +72,6 @@ function App() {
   if (selectedConehead) {
     return (
       <main>
-        {/* Return to the main Coneheads gallery. */}
         <button
           className="back-button"
           type="button"
@@ -87,13 +86,11 @@ function App() {
             {selectedConehead.name}
           </h1>
 
-          {/* Display the Conehead’s original studio photograph. */}
           <img
             src={selectedConehead.originalPhoto}
             alt={`Conehead No. ${selectedConehead.number}: ${selectedConehead.name}`}
           />
 
-          {/* Display each paragraph of the Conehead’s backstory. */}
           <section className="backstory">
             <h2>About {selectedConehead.name}</h2>
 
@@ -105,10 +102,20 @@ function App() {
           </section>
 
           {/*
-            Load every live placement record belonging to
-            this Conehead from the release archive.
+            Official placement records created by the artist.
           */}
           <ReleaseGallery conehead={selectedConehead} />
+
+          {/*
+            Approved finder photographs submitted by members
+            of the public.
+          */}
+          <SightingsGallery conehead={selectedConehead} />
+
+          {/*
+            Public form for submitting a new finder sighting.
+          */}
+          <FinderSubmission conehead={selectedConehead} />
         </article>
       </main>
     )
@@ -118,7 +125,6 @@ function App() {
   return (
     <main>
       <header>
-        {/* Search for a Conehead by name or number. */}
         <input
           type="search"
           placeholder="Search by name or number"
@@ -129,7 +135,6 @@ function App() {
           }
         />
 
-        {/* Select and open one Conehead at random. */}
         <button
           type="button"
           onClick={visitRandomConehead}
@@ -138,10 +143,6 @@ function App() {
         </button>
       </header>
 
-      {/*
-        Hide the introduction and artist biography while searching.
-        This brings the search results directly beneath the controls.
-      */}
       {!isSearching && (
         <>
           <section className="landing-introduction">
@@ -212,7 +213,6 @@ function App() {
               real.
             </p>
 
-            {/* Open a new email addressed to the artist. */}
             <a href="mailto:kriscirkuit@icloud.com">
               Contact
             </a>
@@ -220,7 +220,6 @@ function App() {
         </>
       )}
 
-      {/* Display either the complete gallery or the search results. */}
       <section>
         <h2 className="gallery-heading">
           {isSearching
@@ -228,11 +227,6 @@ function App() {
             : 'Meet the Coneheads'}
         </h2>
 
-        {/*
-          If the search has no matches, display a message.
-          Otherwise, create one gallery entry for each matching
-          Conehead.
-        */}
         {filteredConeheads.length === 0 ? (
           <p>No Coneheads match that search.</p>
         ) : (
@@ -243,10 +237,6 @@ function App() {
                 {conehead.name}
               </h3>
 
-              {/*
-                The photograph is inside a button, making the
-                whole image clickable.
-              */}
               <button
                 type="button"
                 onClick={() =>
@@ -260,7 +250,6 @@ function App() {
                 />
               </button>
 
-              {/* This provides a labelled route to the same page. */}
               <button
                 type="button"
                 onClick={() =>
@@ -277,6 +266,4 @@ function App() {
   )
 }
 
-// Make App available to main.jsx,
-// which places the website into the browser.
 export default App

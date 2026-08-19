@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import coneheads from '../data/coneheads'
 import supabase from '../lib/supabase'
+import PendingSightings from './PendingSightings'
 
 function ReleasePage() {
   const [session, setSession] = useState(null)
@@ -78,6 +79,7 @@ function ReleasePage() {
     setPublishMessage('Publishing release...')
 
     const timestamp = Date.now()
+
     const safeFileName = photo.name
       .toLowerCase()
       .replace(/[^a-z0-9.]+/g, '-')
@@ -94,7 +96,9 @@ function ReleasePage() {
       })
 
     if (uploadError) {
-      setPublishMessage(`Photograph upload failed: ${uploadError.message}`)
+      setPublishMessage(
+        `Photograph upload failed: ${uploadError.message}`
+      )
       setPublishing(false)
       return
     }
@@ -165,7 +169,9 @@ function ReleasePage() {
               type="email"
               autoComplete="email"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) =>
+                setEmail(event.target.value)
+              }
               required
             />
 
@@ -178,7 +184,9 @@ function ReleasePage() {
               type="password"
               autoComplete="current-password"
               value={password}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(event) =>
+                setPassword(event.target.value)
+              }
               required
             />
 
@@ -187,7 +195,9 @@ function ReleasePage() {
             </button>
 
             {loginMessage && (
-              <p className="form-message">{loginMessage}</p>
+              <p className="form-message">
+                {loginMessage}
+              </p>
             )}
           </form>
         </section>
@@ -256,7 +266,9 @@ function ReleasePage() {
             type="text"
             placeholder="For example: Portobello Beach, Edinburgh"
             value={location}
-            onChange={(event) => setLocation(event.target.value)}
+            onChange={(event) =>
+              setLocation(event.target.value)
+            }
             required
           />
 
@@ -269,7 +281,9 @@ function ReleasePage() {
             rows="5"
             placeholder="What is happening here?"
             value={caption}
-            onChange={(event) => setCaption(event.target.value)}
+            onChange={(event) =>
+              setCaption(event.target.value)
+            }
           />
 
           <button
@@ -282,7 +296,9 @@ function ReleasePage() {
           </button>
 
           {publishMessage && (
-            <p className="form-message">{publishMessage}</p>
+            <p className="form-message">
+              {publishMessage}
+            </p>
           )}
         </form>
 
@@ -294,6 +310,8 @@ function ReleasePage() {
           Sign Out
         </button>
       </section>
+
+      <PendingSightings />
     </main>
   )
 }
