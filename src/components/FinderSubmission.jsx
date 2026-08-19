@@ -15,8 +15,6 @@ function FinderSubmission({ conehead }) {
   const submitSighting = async (event) => {
     event.preventDefault()
 
-    console.log('submitSighting fired')
-
     if (!photo) {
       setSubmitMessage('Please choose a photograph.')
       return
@@ -34,14 +32,6 @@ function FinderSubmission({ conehead }) {
     const imagePath =
       `${conehead.number}/${timestamp}-${safeFileName}`
 
-    console.log('Submitting finder sighting:', {
-      coneheadNumber: conehead.number,
-      imagePath,
-      fileName: photo.name,
-      fileType: photo.type,
-      fileSize: photo.size,
-    })
-
     const { error: uploadError } = await supabase.storage
       .from('finder-submissions')
       .upload(imagePath, photo, {
@@ -51,8 +41,6 @@ function FinderSubmission({ conehead }) {
       })
 
     if (uploadError) {
-      console.error('Finder upload error:', uploadError)
-
       setSubmitMessage(
         `Photograph upload failed: ${uploadError.message}`
       )
@@ -60,8 +48,6 @@ function FinderSubmission({ conehead }) {
       setSubmitting(false)
       return
     }
-
-    console.log('Finder photograph uploaded successfully.')
 
     const { error: databaseError } = await supabase
       .from('finder_submissions')
@@ -74,11 +60,6 @@ function FinderSubmission({ conehead }) {
       })
 
     if (databaseError) {
-      console.error(
-        'Finder database insert error:',
-        databaseError
-      )
-
       await supabase.storage
         .from('finder-submissions')
         .remove([imagePath])
@@ -90,8 +71,6 @@ function FinderSubmission({ conehead }) {
       setSubmitting(false)
       return
     }
-
-    console.log('Finder submission saved successfully.')
 
     setPhoto(null)
     setLocation('')

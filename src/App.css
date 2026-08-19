@@ -334,6 +334,58 @@ article > button {
 }
 
 
+/* Public Conehead sightings */
+
+.sightings-gallery {
+  width: min(85%, 500px);
+  margin: 0 auto 4rem;
+  color: #fff;
+}
+
+.sightings-gallery > h2 {
+  margin: 0 0 24px;
+  color: #f47d06;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.sightings-gallery > p {
+  color: #fff;
+  line-height: 1.6;
+}
+
+.sighting-entry {
+  margin: 0 0 32px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sighting-entry img {
+  border-radius: 8px;
+}
+
+.sighting-entry h3 {
+  margin: 18px 0 10px;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.sighting-entry p {
+  margin: 0 0 12px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.sighting-entry .release-date {
+  margin-bottom: 0;
+  color: #c7c7c7;
+  font-size: 0.9rem;
+}
+
+
 /* Finder photo submission */
 
 .finder-submission {
@@ -418,6 +470,86 @@ article > button {
 }
 
 
+/* Pending sightings moderation */
+
+.pending-sightings {
+  width: min(100%, 520px);
+  margin: 32px auto 0;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #222;
+  color: #fff;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.pending-sightings > h2 {
+  margin: 0 0 24px;
+  color: #f47d06;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.pending-sightings > p {
+  color: #fff;
+  line-height: 1.6;
+}
+
+.pending-sighting {
+  margin: 0 0 28px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pending-sighting:last-child {
+  margin-bottom: 0;
+}
+
+.pending-sighting img {
+  border-radius: 8px;
+}
+
+.pending-sighting h3 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.pending-sighting p {
+  margin: 12px 0 0;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.pending-sighting .release-date {
+  color: #c7c7c7;
+  font-size: 0.9rem;
+}
+
+.moderation-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.moderation-buttons button {
+  flex: 1;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.moderation-buttons button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+
 /* Larger screens */
 
 @media (min-width: 700px) {
@@ -438,7 +570,8 @@ article > button {
     padding-top: 48px;
   }
 
-  .release-panel {
+  .release-panel,
+  .pending-sightings {
     padding: 32px;
   }
 

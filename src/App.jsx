@@ -184,12 +184,15 @@ function App() {
               If you find one, you can keep it. You can also
               place it somewhere new for somebody else to
               discover. If you photograph your Conehead, you
-              can email me the image, its location and anything
-              you would like to share about what happened.
-              Your photograph may then become part of the
-              character’s continuing story on this website.
-              You can also place your Conehead somewhere with
-              the QR code for someone else to find.
+              can submit the image directly from that
+              character&apos;s page. You can add a location,
+              a short note, or your name if you want to, but
+              none of these are required. Approved
+              photographs may become part of the
+              character&apos;s continuing story on this
+              website. You can also place your Conehead
+              somewhere with the QR code for someone else to
+              find.
             </p>
 
             <p>
